@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
-import "../assets/Company-Logo.png";
+import CompanyLogo from "../assets/Company-Logo.png";
 
 
 function Navbar() {
@@ -21,7 +21,10 @@ function Navbar() {
         </div>
       </div>
       <div className="rightSide">
-        <img src="../assets/Company-Logo.png" alt="Org-Logo"></img>
+      <div
+        className="company-logo"
+        style={{ backgroundImage: `url(${CompanyLogo})` }}
+      >logo</div>
         <Link to="/"> Home </Link>
         <Link to="/about"> About </Link>
         <Link to="/ethics"> Ethics </Link>

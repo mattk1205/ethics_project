@@ -6,6 +6,10 @@
   flex-direction: row;
 }
 
+.navbar .company-logo {
+  width: 30px;
+}
+
 .navbar .leftSide {
   flex: 50%;
   height: 100%;
@@ -89,6 +93,10 @@
   .navbar .rightSide button {
     display: inherit;
   }
+}
+
+.navbar {
+  height: 8rem;
 }
 
 @media only screen and (min-width: 600px) {
