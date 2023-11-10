@@ -10,20 +10,12 @@ function About() {
       ></div>
       <div className="aboutBottom">
         <h1> ABOUT US</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-          accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-          molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
-          officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
-          nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
-          error repudiandae fuga? Ipsa laudantium molestias eos sapiente
-          officiis modi at sunt excepturi expedita sint? Sed quibusdam
-          recusandae alias error harum maxime adipisci amet laborum.
-          Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a
-          cumque velit
+        <p> 
+        Discover ethical perspectives tailored to your interests on our website. Explore 
+        various viewpoints on issues by navigating our platform for a comprehensive 
+        understanding. Dive into customized ethical considerations that seamlessly align with 
+        your quest for knowledge. This is a space where ethical discourse flourishes, providing 
+        a rich source for diverse and enlightened perspectives.
         </p>
       </div>
     </div>
