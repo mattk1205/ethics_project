@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BannerImage from "../assets/pizza.jpeg";
+import BannerImage from "../assets/howtousebackground.png";
 import "../styles/Home.css";
 import "./Ethics"
 
@@ -8,8 +8,22 @@ function Home() {
   return (
     <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
       <div className="headerContainer">
-        <h1> This is a template </h1>
-        <p> Style how you see fit</p>
+        <div className = "instructions">
+          <h1 id="how-2"> How to use </h1>
+            <div className = "box">
+              <ul>
+              <li>
+                Write your ethical question in the box
+              </li>
+              <li>
+                Choose ethical stance you want the AI to take
+              </li>
+              <li>
+                Wait for AI to write a response
+              </li>
+           </ul>
+           </div>
+        </div>
         <Link to="/ethics">
           <button> Button to gpt </button>
         </Link>
