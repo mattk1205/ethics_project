@@ -11,9 +11,16 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+#how-2 {
+  color: white;
+}
+
+
+
 .headerContainer {
   width: auto;
   margin-left: 50px;
+  font-weight: 1000;
 }
 
 .headerContainer h1 {
@@ -52,13 +59,14 @@
   transition: 0.3s ease-in;
 }
 
+.home .instructions {
+  color: white;
+}
+
 @media only screen and (max-width: 650px) {
   .home {
     justify-content: center;
     align-items: center;
-  }
-  .headerContainer h1,
-  .headerContainer p {
   }
 
   .headerContainer {
