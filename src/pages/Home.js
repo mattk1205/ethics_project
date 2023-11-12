@@ -8,20 +8,20 @@ function Home() {
   return (
     <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
       <div className="headerContainer">
-        <div className = "instructions">
+        <div className = "headder-instructions">
           <h1 id="how-2"> How to use </h1>
             <div className = "box">
-              <ul>
-              <li>
-                Write your ethical question in the box
-              </li>
-              <li>
-                Choose ethical stance you want the AI to take
-              </li>
-              <li>
-                Wait for AI to write a response
-              </li>
-           </ul>
+              <ul className = "instructions">
+                <li>
+                  Write your ethical question in the box
+                </li>
+                <li>
+                  Choose ethical stance you want the AI to take
+                </li>
+                <li>
+                  Wait for AI to write a response
+                </li>
+              </ul>
            </div>
         </div>
         <Link to="/ethics">
