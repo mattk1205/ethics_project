@@ -15,8 +15,6 @@
   color: white;
 }
 
-
-
 .headerContainer {
   width: auto;
   margin-left: 50px;
@@ -61,6 +59,11 @@
 
 .home .instructions {
   color: white;
+  background-color: #121619;
+  width: fit-content;
+  padding: 1rem;
+  padding-left: 2rem;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 650px) {
