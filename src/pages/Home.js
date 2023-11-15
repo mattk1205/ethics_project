@@ -25,7 +25,7 @@ function Home() {
            </div>
         </div>
         <Link to="/ethics">
-          <button> Button to gpt </button>
+          <button> Ask a question </button>
         </Link>
       </div>
     </div>
