@@ -4,7 +4,7 @@ import ResponseComponent from "../components/Response";
 import "../styles/Ethics.css";
 
 const openai = new OpenAI({
-    apiKey: "", // Replace with your actual API key
+    apiKey: "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", // Replace with your actual API key
     dangerouslyAllowBrowser: true
 });
 
@@ -20,10 +20,10 @@ const QuestionComponent = () => {
         setIsLoading(true);
         try {
             const response = await openai.chat.completions.create({
-                model: "gpt-4",
+                model: "gpt-4-1106-preview",
                 messages: [
-                    { role: "system", content: "You are a helpful assistant." },
-                    { role: "user", content: `Respond to the following ethical question. Take a ${sentiment} stance. Reference ethical theories and philosophies: ${question}` }
+                    { role: "system", content: "You answer ethical questions only. Refrain from answering as an entity and just provide a response." },
+                    { role: "user", content: `Respond to the following ethical question. For the sake of the argument, provide an answer and evidence that says it is absolutely ${sentiment}. Do not argue a different side. Reference ethical theories and philosophies: ${question}` }
                 ],
                 temperature: 0.7,
                 max_tokens: 716,
@@ -31,11 +31,21 @@ const QuestionComponent = () => {
                 frequency_penalty: 0,
                 presence_penalty: 0
             });
-            setResponses(response.choices[0]?.message?.content); // Adjust according to the actual response structure
+            setResponses(response.choices[0]?.message?.content);
         } catch (error) {
             console.error("Failed to fetch responses:", error);
         }
         setIsLoading(false);
+    };
+
+    const renderButtonContent = (text) => {
+        return isLoading ? (
+            <>
+                <span>Loading...</span>
+            </>
+        ) : (
+            <span>{text}</span>
+        );
     };
 
     return (
@@ -51,12 +61,18 @@ const QuestionComponent = () => {
             </div>
             <br/>
             <div className="button-container">
-                <button onClick={() => fetchResponses("for")} disabled={isLoading}>For</button>
-                <button onClick={() => fetchResponses("neutral")} disabled={isLoading}>Neutral</button>
-                <button onClick={() => fetchResponses("against")} disabled={isLoading}>Against</button>
-                    {responses ? (
-                        <ResponseComponent responses={responses}/>
-                    ) : null}
+                <button onClick={() => fetchResponses("ethical")} disabled={isLoading}>
+                    {renderButtonContent('For')}
+                </button>
+                <button onClick={() => fetchResponses("ethically neutral")} disabled={isLoading}>
+                    {renderButtonContent('Neutral')}
+                </button>
+                <button onClick={() => fetchResponses("unethical")} disabled={isLoading}>
+                    {renderButtonContent('Against')}
+                </button>
+                {responses ? (
+                    <ResponseComponent responses={responses}/>
+                ) : null}
             </div>
         </div>
     );
