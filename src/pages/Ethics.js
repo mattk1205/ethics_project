@@ -4,11 +4,7 @@ import ResponseComponent from "../components/Response";
 import "../styles/Ethics.css";
 
 const openai = new OpenAI({
-<<<<<<< HEAD
-    apiKey: "", // Replace with your actual API key
-=======
-    apiKey: "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", // Replace with your actual API key
->>>>>>> origin
+    apiKey: "",
     dangerouslyAllowBrowser: true
 });
 
