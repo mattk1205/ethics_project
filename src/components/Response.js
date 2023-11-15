@@ -4,7 +4,7 @@ export default function ResponseComponent ({ responses })  {
         return (
             <div>
                 <div  style={{margin: '1em'}}>
-                    <strong>Responses:</strong>
+                    <strong>Response:</strong>
                 </div>
                 {splitResponses.map((part, index) => {
                     if (part) {
