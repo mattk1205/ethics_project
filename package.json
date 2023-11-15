@@ -1,6 +1,7 @@
 {
   "name": "ethics_project",
   "version": "0.1.0",
+  "homepage": "https://mattk1205.github.io/ethics_project",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -41,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.0.0",
     "react-router-dom": "^6.18.0"
   }
 }
