@@ -4,7 +4,7 @@ import "../styles/Footer.css";
 function Footer() {
   return (
     <div className="footer">
-      <p> &copy; 2023 Ethical Organization</p>
+      <p> &copy; 2023 AI Ethics</p>
     </div>
   );
 }
