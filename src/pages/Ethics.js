@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import OpenAI from "openai";
 import ResponseComponent from "../components/Response";
 import "../styles/Ethics.css";
-import VideoBackground from "../components/VideoBackground";
+import video2 from "../assets/EthicsBackground.mp4"
 
 const openai = new OpenAI({
-    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+    apiKey: "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",
     dangerouslyAllowBrowser: true
 });
 
@@ -40,7 +40,9 @@ const QuestionComponent = () => {
 
     return (
         <div className="container">
-            <VideoBackground id="885094095"/>
+            <video autoPlay loop muted className="background-video">
+                <source src={video2} type="video/mp4" />
+            </video>
             <div className="content">
                 <h1 className="title">What Brings You...</h1>
                 <textarea
