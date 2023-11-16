@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import OpenAI from "openai";
 import ResponseComponent from "../components/Response";
 import "../styles/Ethics.css";
@@ -14,7 +14,6 @@ const QuestionComponent = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const fetchResponses = async (sentiment) => {
-        console.log(sentiment)
         if (!question.trim()) return;
 
         setIsLoading(true);
@@ -40,39 +39,39 @@ const QuestionComponent = () => {
 
     const renderButtonContent = (text) => {
         return isLoading ? (
-            <>
-                <span>Loading...</span>
-            </>
+            <span>Loading...</span>
         ) : (
             <span>{text}</span>
         );
     };
 
     return (
-        <div className="input-box">
-            <h1>Submit Ethical Question</h1>
-            <div className="input-container">
-                <textarea
-                    type="text"
-                    value={question}
-                    onChange={(e) => setQuestion(e.target.value)}
-                    placeholder="Ask an ethical question..."
-                />
-            </div>
-            <br/>
-            <div className="button-container">
-                <button onClick={() => fetchResponses("ethical")} disabled={isLoading}>
-                    {renderButtonContent('For')}
-                </button>
-                <button onClick={() => fetchResponses("ethically neutral")} disabled={isLoading}>
-                    {renderButtonContent('Neutral')}
-                </button>
-                <button onClick={() => fetchResponses("unethical")} disabled={isLoading}>
-                    {renderButtonContent('Against')}
-                </button>
-                {responses ? (
-                    <ResponseComponent responses={responses}/>
-                ) : null}
+        <div className="ethics-page">
+            <div className="input-box">
+                <h1 style={{ color: 'white' }}>Submit Ethical Question</h1>
+                <div className="input-container">
+                    <textarea
+                        type="text"
+                        value={question}
+                        onChange={(e) => setQuestion(e.target.value)}
+                        placeholder="Ask an ethical question..."
+                    />
+                </div>
+                <br/>
+                <div className="button-container">
+                    <button onClick={() => fetchResponses("ethical")} disabled={isLoading}>
+                        {renderButtonContent('For')}
+                    </button>
+                    <button onClick={() => fetchResponses("ethically neutral")} disabled={isLoading}>
+                        {renderButtonContent('Neutral')}
+                    </button>
+                    <button onClick={() => fetchResponses("unethical")} disabled={isLoading}>
+                        {renderButtonContent('Against')}
+                    </button>
+                    {responses && (
+                        <ResponseComponent responses={responses}/>
+                    )}
+                </div>
             </div>
         </div>
     );
