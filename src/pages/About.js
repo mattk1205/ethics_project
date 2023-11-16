@@ -1,13 +1,11 @@
 import React from "react";
 import "../styles/About.css";
-import TechBackground from "../assets/TechBackground.mp4";
+import VideoBackground from "../components/VideoBackground.js";
 
 function About() {
   return (
       <div className="home">
-          <video autoPlay loop muted className="background-video ">
-              <source src={TechBackground} type="video/mp4"/>
-          </video>
+          <VideoBackground id="885094057"/>
     <div className="content">
       <div
         className=""

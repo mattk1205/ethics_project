@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BackgroundVideo from '../assets/BackgroundVideo.mp4';
 import '../styles/Home.css';
+import VideoBackground from "../components/VideoBackground";
 
 export default function Home() {
     return (
         <div className="home">
-            <video autoPlay muted loop playsInline id="background-video">
-                <source src={BackgroundVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
+            <VideoBackground id="885094088"/>
             <div className="text-overlay">
                 <div className="headerContainer">
                     <h1>Welcome to The Beast</h1>
