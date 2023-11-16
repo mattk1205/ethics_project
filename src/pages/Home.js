@@ -1,35 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import BannerImage from "../assets/howtousebackground.png";
-import "../styles/Home.css";
-import "./Ethics"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import BackgroundVideo from '../assets/BackgroundVideo.mp4';
+import '../styles/Home.css';
 
-function Home() {
-  return (
-    <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
-      <div className="headerContainer">
-        <div className = "headder-instructions">
-          <h1 id="how-2"> How to use </h1>
-            <div className = "box">
-              <ul className = "instructions">
-                <li>
-                  Write your ethical question in the box
-                </li>
-                <li>
-                  Choose ethical stance you want the AI to take
-                </li>
-                <li>
-                  Wait for AI to write a response
-                </li>
-              </ul>
-           </div>
+export default function Home() {
+    return (
+        <div className="home">
+            <video autoPlay muted loop playsInline id="background-video">
+                <source src={BackgroundVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <div className="text-overlay">
+                <div className="headerContainer">
+                    <h1>Welcome to The Beast</h1>
+                    <p>How are you today?</p>
+                    <div className="instructions-box">
+                        <ul className="instructions-list">
+                            <li>Ask The Beast an ethical question</li>
+                            <li>Choose the ethical stance you want The Beast to take</li>
+                            <li>Wait for The Beast to generate a response</li>
+                        </ul>
+                    </div>
+                    <Link to="/ethics" className="ask-button-link">
+                        <p></p>
+                        <button className="ask-button">Enter The Beast &#8594;</button>
+                    </Link>
+                </div>
+            </div>
         </div>
-        <Link to="/ethics">
-          <button> Ask a question </button>
-        </Link>
-      </div>
-    </div>
-  );
+    );
 }
-
-export default Home;
