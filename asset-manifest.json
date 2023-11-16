@@ -1,20 +1,17 @@
 {
   "files": {
     "main.css": "/ethics_project/static/css/main.1b35d41a.css",
-    "main.js": "/ethics_project/static/js/main.4da58985.js",
+    "main.js": "/ethics_project/static/js/main.91cf6584.js",
     "static/js/787.55c7a798.chunk.js": "/ethics_project/static/js/787.55c7a798.chunk.js",
-    "static/media/TechBackground.mp4": "/ethics_project/static/media/TechBackground.9a63abfd19151ca014c9.mp4",
-    "static/media/EthicsBackground.mp4": "/ethics_project/static/media/EthicsBackground.66c77483a3fdad1e3aa7.mp4",
-    "static/media/BackgroundVideo.mp4": "/ethics_project/static/media/BackgroundVideo.01e326c913dcb8c0a497.mp4",
     "static/media/Company-Logo.png": "/ethics_project/static/media/Company-Logo.529b104fe829bade37b6.png",
     "static/media/Company-Logo-Hover.png": "/ethics_project/static/media/Company-Logo-Hover.eeb20b10b66ff1de5bf0.png",
     "index.html": "/ethics_project/index.html",
     "main.1b35d41a.css.map": "/ethics_project/static/css/main.1b35d41a.css.map",
-    "main.4da58985.js.map": "/ethics_project/static/js/main.4da58985.js.map",
+    "main.91cf6584.js.map": "/ethics_project/static/js/main.91cf6584.js.map",
     "787.55c7a798.chunk.js.map": "/ethics_project/static/js/787.55c7a798.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1b35d41a.css",
-    "static/js/main.4da58985.js"
+    "static/js/main.91cf6584.js"
   ]
 }
