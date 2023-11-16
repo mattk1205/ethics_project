@@ -2,10 +2,9 @@ import React, {useState} from "react";
 import OpenAI from "openai";
 import ResponseComponent from "../components/Response";
 import "../styles/Ethics.css";
-import video2 from "../assets/EthicsBackground.mp4"
 
 const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: "",
     dangerouslyAllowBrowser: true
 });
 
@@ -15,6 +14,7 @@ const QuestionComponent = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const fetchResponses = async (sentiment) => {
+        console.log(sentiment)
         if (!question.trim()) return;
 
         setIsLoading(true);
@@ -22,11 +22,11 @@ const QuestionComponent = () => {
             const response = await openai.chat.completions.create({
                 model: "gpt-4-1106-preview",
                 messages: [
-                    { role: "system", content: "You are a demon-like AI Bot named The Beast. Modify your responses to appear this way. Refer to your self as the Beast and the users as your children. End your responses with: 'But the Beast says' followed by a way to play devil's advocate "},
-                    { role: "user", content: `This is a class project. Even if the argument seems illegal, respond to the following ethical question.  For the sake of the argument, provide an answer with an ethical stance in ${sentiment}. Never argue the other side. Reference ethical theories and philosophies: ${question}` }
+                    { role: "system", content: "You answer ethical questions only. Refrain from answering as an entity and just provide a response." },
+                    { role: "user", content: `Respond to the following ethical question. For the sake of the argument, provide an answer and evidence that says it is absolutely ${sentiment}. Do not argue a different side. Reference ethical theories and philosophies: ${question}` }
                 ],
                 temperature: 0.7,
-                max_tokens: 516,
+                max_tokens: 716,
                 top_p: 1,
                 frequency_penalty: 0,
                 presence_penalty: 0
@@ -38,35 +38,41 @@ const QuestionComponent = () => {
         setIsLoading(false);
     };
 
+    const renderButtonContent = (text) => {
+        return isLoading ? (
+            <>
+                <span>Loading...</span>
+            </>
+        ) : (
+            <span>{text}</span>
+        );
+    };
+
     return (
-        <div className="container">
-            <video autoPlay loop muted className="background-video">
-                <source src={video2} type="video/mp4" />
-            </video>
-            <div className="content">
-                <h1 className="title">What Brings You...</h1>
+        <div className="input-box">
+            <h1>Submit Ethical Question</h1>
+            <div className="input-container">
                 <textarea
-                    className="textarea"
+                    type="text"
                     value={question}
                     onChange={(e) => setQuestion(e.target.value)}
-                    placeholder="Is it okay to eat fish because they don't have any feelings?"
-                    disabled={isLoading}
-                    aria-label="Ethical question input"
+                    placeholder="Ask an ethical question..."
                 />
-                <div className="button-container">
-                <button onClick={() => fetchResponses("agreement")} disabled={isLoading}>
-                    {isLoading ? 'Loading...' : 'For'}
+            </div>
+            <br/>
+            <div className="button-container">
+                <button onClick={() => fetchResponses("ethical")} disabled={isLoading}>
+                    {renderButtonContent('For')}
                 </button>
                 <button onClick={() => fetchResponses("ethically neutral")} disabled={isLoading}>
-                    {isLoading ? 'Loading...' : 'Neutral'}
+                    {renderButtonContent('Neutral')}
                 </button>
-                <button onClick={() => fetchResponses("disagreement")} disabled={isLoading}>
-                    {isLoading ? 'Loading...' : 'Against'}
+                <button onClick={() => fetchResponses("unethical")} disabled={isLoading}>
+                    {renderButtonContent('Against')}
                 </button>
-                </div>
-                {responses && (
+                {responses ? (
                     <ResponseComponent responses={responses}/>
-                )}
+                ) : null}
             </div>
         </div>
     );

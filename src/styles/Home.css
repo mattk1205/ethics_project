@@ -1,102 +1,109 @@
 .home {
-  position: relative;
-  min-height: 87vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  font-family: 'Open Sans', sans-serif;
-}
-
-#background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.text-overlay {
-  z-index: 1;
+#how-2 {
   color: white;
-  text-align: center;
-  max-width: 800px;
-  padding: 20px;
 }
 
 .headerContainer {
-  background-color: rgba(0, 0, 0, 0.75);
-  border-radius: 5px;
-  padding: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: auto;
+  margin-left: 50px;
+  font-weight: 1000;
 }
 
 .headerContainer h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 90px;
+  height: 60px;
+  font-weight: 50;
+  color: black;
 }
 
 .headerContainer p {
-  font-size: 1.2em;
-  color: #ddd;
-  margin-bottom: 1.5em;
-}
-
-.instructions-box {
-  background-color: white;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.instructions-list {
-  list-style: none;
   padding: 0;
-  color: #333;
+  font-size: 40px;
+  font-weight: lighter;
+  color: black;
 }
 
-.ask-button {
-  background-color: seagreen;
-  color: white;
+.headerContainer button {
+  color: black;
   border: none;
-  padding: 10px 20px;
-  font-size: 1em;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.ask-button:hover {
-  background-color: #0056b3;
-}
-
-.ask-button-link {
+  justify-content: center;
+  background-color: #121619;
+  height: 50px;
+  width: 200px;
+  color: white;
   text-decoration: none;
+  font-size: 18px;
+}
+
+.headerContainer button:hover {
+  background-color: #07090a;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.home .instructions {
+  color: white;
+  background-color: #121619;
+  width: fit-content;
+  padding: 1rem;
+  padding-left: 2rem;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 650px) {
-  .text-overlay {
-    padding: 10px;
+  .home {
+    justify-content: center;
+    align-items: center;
   }
 
   .headerContainer {
-    padding: 15px;
+    margin-left: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #121619;
+    color: white;
   }
 
   .headerContainer h1 {
-    font-size: 1.5em;
+    font-size: 40px;
+    height: 30px;
+    color: white;
   }
 
   .headerContainer p {
-    font-size: 1em;
+    font-size: 30px;
+    color: white;
   }
 
-  .ask-button {
-    padding: 8px 16px;
-    font-size: 0.9em;
+  .headerContainer button {
+    background-color: white;
+    color: #121619;
+    margin-bottom: 30px;
+  }
+
+  .headerContainer button:hover {
+    background-color: rgb(225, 225, 225);
+    color: #121619;
   }
 }
-
